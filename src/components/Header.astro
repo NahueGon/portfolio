@@ -1,0 +1,47 @@
+---
+import MoonIcon from "./icons/MoonIcon.astro";
+---
+
+<header class="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-between w-full max-w-2xl sm:mt-2 p-3 sm:p-4 opacity-[95] rounded-b-xl sm:rounded-xl">
+    <div class="flex items-center">
+        <img class="rounded-full w-12 h-12 mr-4 block sm:hidden" src="/images/perfil.jpg" alt="photo by Nahuel González">
+        <a href="/" class="font-sans italic text-xl font-semibold">
+            NauDev
+        </a>
+    </div>
+    <nav class="flex items-center gap-6">
+        <MoonIcon class="cursor-pointer" />
+    </nav>
+</header>
+
+<style>
+    header {
+        animation: nav-shadow 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+    }
+  
+    header {
+        background-image: linear-gradient(to right, rgba(1, 18, 174, 0.1), rgba(215, 104, 1, 0.1));
+    }
+  
+    @media (prefers-color-scheme: dark) {
+        header {
+            background-image: linear-gradient(to right, rgba(29, 43, 174, 0.1), rgba(206, 120, 39, 0.1));
+        }
+    }
+  
+    @keyframes nav-shadow {
+        0% {
+            background-image: linear-gradient(to right, rgba(38, 23, 203, 0), rgba(0, 0, 0, 0));
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+    
+        to {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+</style>

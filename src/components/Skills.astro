@@ -1,0 +1,69 @@
+---
+
+import CardItem from "./CardItem.astro";
+import JavaScriptIcon from "./icons/skills/JavaScriptIcon.astro";
+import HtmlIcon from "./icons/skills/HtmlIcon.astro";
+import CssIcon from "./icons/skills/CssIcon.astro";
+import ReactIcon from "./icons/skills/ReactIcon.astro";
+import TailwindIcon from "./icons/skills/TailwindIcon.astro";
+import TypeScriptIcon from "./icons/skills/TypeScriptIcon.astro";
+import PhpIcon from "./icons/skills/PhpIcon.astro";
+import SymfonyIcon from "./icons/skills/SymfonyIcon.astro";
+import AstroIcon from "./icons/skills/AstroIcon.astro";
+import LaravelIcon from "./icons/skills/LaravelIcon.astro";
+
+const cards = [
+    {
+        title: 'Años en Desarrollo Web',
+        counterStart: 0,
+        counterEnd: 1,
+    },
+    {
+        title: 'Proyectos en Proceso',
+        counterStart: 0,
+        counterEnd: 2,
+    },
+    {
+        title: 'Certificados Obtenidos',
+        counterStart: 0,
+        counterEnd: 30,
+    },
+    
+]
+
+const icons = [
+    { name: 'HTML', component:HtmlIcon  },
+    { name: 'CSS', component: CssIcon },
+    { name: 'JavaScript', component: JavaScriptIcon },
+    { name: 'TypeScript', component: TypeScriptIcon },
+    { name: 'React', component: ReactIcon },
+    { name: 'Tailwind', component: TailwindIcon },
+    { name: 'Astro', component: AstroIcon },
+    { name: 'PHP', component: PhpIcon },
+    { name: 'Symfony', component: SymfonyIcon },
+    { name: 'Laravel', component: LaravelIcon },
+];
+
+---
+
+<div class="flex flex-wrap gap-8 mb-15 justify-center opacity-80">
+    {
+        icons.map(({ name, component: Icon }) => (
+            <div class="flex flex-col items-center">
+                <Icon class="size-10 mb-3" />
+                <span>{ name }</span>
+            </div>
+        ))
+    }
+</div>
+
+<div class="flex flex-wrap justify-center gap-3 sm:gap-6 w-full opacity-80">
+    {
+        cards.map( card => (
+            <div class="flex flex-col border-4 border-zinc-600 p-4 gap-4 w-full max-w-38 max-h-38">
+                <CardItem { ...card } />
+                <p class="text-sm">{ card.title }</p>
+            </div>
+        ))
+    }
+</div>

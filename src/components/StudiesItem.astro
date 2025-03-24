@@ -1,0 +1,14 @@
+---
+export interface Props {
+    title: string
+    certificate: string
+    description: string
+    date: string
+}
+const { title, certificate, description, date } = Astro.props;
+---
+<div class="absolute animate-ping w-3 h-3 rounded-full mt-1.5 -start-1.5 bg-blue-600 "></div>
+<time class="mb-1 text-sm font-normal leading-none text-gray-500">{ date }</time>
+<h3 class="text-lg font-semibold text-blue-600">{ title }</h3>
+<h4 class="text-md font-semibold text-orange-600">{ certificate }</h4>
+<p class="mb-4 text-sm sm:text-md font-normal w-full sm:max-w-xl">{ description }</p>
