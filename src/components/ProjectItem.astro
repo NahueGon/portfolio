@@ -1,0 +1,53 @@
+---
+import ProjectIcon from "./icons/ProjectIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import SocialPill from "./SocialPill.astro";
+import TagItem from "./TagItem.astro";
+
+export interface Props {
+    image: string
+    title: string
+    description: string
+    link: string
+    github: string
+    tags: { name: string; classes: string; icon: (_props: Record<string, any>) => any }[];
+}
+
+const { image, title, description, link, github, tags } = Astro.props;
+
+---
+<div class="flex flex-col sm:flex-row gap-5 w-full sm:items-center">
+    <div class="w-full sm:max-w-90 flex-none rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-150 ease-in-out overflow-hidden mx-auto">
+        <img src={ image } class="rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-99" alt="">
+    </div>
+
+    <div class="flex flex-col sm:max-w-90 sm:mx-auto">
+
+        <h3 class="text-lg font-semibold text-blue-600">{ title }</h3>
+
+        <div class="w-full mb-2 flex flex-wrap gap-2">
+            {
+                tags.map( ({ name, classes, icon }) => (
+                    <TagItem
+                        name={ name }
+                        classes={ classes }
+                        Icon={ icon }
+                    />
+                ) )
+            }
+        </div>
+
+        <p class="text-sm mb-4">{ description }</p>
+
+        <div class="flex gap-2">
+            <SocialPill href={ link }>
+                <ProjectIcon class="size-4"/>
+                <small>Proyecto</small>
+            </SocialPill>
+            <SocialPill href={ github }>
+                <GitHubIcon class="size-4"/> 
+                <small>GitHuB</small>
+            </SocialPill>
+        </div>
+    </div>
+</div>

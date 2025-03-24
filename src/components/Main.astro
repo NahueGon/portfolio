@@ -1,0 +1,117 @@
+---
+import About from "./About.astro";
+import ComputerIcon from "./icons/ComputerIcon.astro";
+import Experience from "./Experience.astro";
+import FileIcon from "./icons/FileIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import GlassIcon from "./icons/GlassIcon.astro";
+import LinkedInIcon from "./icons/LinkedinIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
+import PortfolioIcon from "./icons/PortfolioIcon.astro";
+import Projects from "./Projects.astro";
+import SectionContainer from "./SectionContainer.astro";
+import SectionHeader from "./SectionHeader.astro";
+import ShovelIcon from "./icons/ShovelIcon.astro";
+import Skills from "./Skills.astro";
+import SocialPill from "./SocialPill.astro";
+import Studies from "./Studies.astro";
+import UserIcon from "./icons/UserIcon.astro";
+
+---
+
+<main>
+	<SectionContainer class="pt-52 pb-52">
+		<div class="flex justify-center sm:justify-between gap-x-5 md:gap-x-10 mb-5 opacity-80">
+			<img class="min-w-35 max-w-60 hidden sm:block rounded-full flex-none border-4 border-zinc-600" src="/images/perfil.jpg" alt="photo by Nahuel González">
+			<div class="w-90 shrink">
+				<p class="font-sans text-2xl font-bold typing-effect mb-3">¡Hola!</p>
+				<h1 class="font-sans text-md font-bold">
+					SOY <span class="text-blue-600 text-3xl">NAHUEL GONZÁLEZ </span>
+				</h1>
+				<p class="font-sans text-md font-bold">
+					<span class="text-orange-600 text-3xl">PROGRAMADOR</span> WEB
+				</p>
+				<p class="font-sans font-bold text-sm sm:text-md mt-4">
+					+1 año de experiencia. Estudiante. <span class="text-blue-600">Desarrollador Web. </span></span> Ingles. 
+				</p>
+			</div>
+		</div>
+		<div class="flex flex-wrap justify-center sm:justify-end gap-2 opacity-80">
+			<SocialPill href="https://www.linkedin.com/in/naudev/">
+				<LinkedInIcon class="size-4" />
+				<span class="text-sm">LinkedIn</span>
+			</SocialPill>
+			<SocialPill href="" >
+				<FileIcon class="size-5" />
+				Resume
+			</SocialPill>
+			<SocialPill href="https://mail.google.com/mail/?view=cm&to=nahuelgonzaleznahuelg2014@gmail.com.com" >
+				<MailIcon class="size=4" />
+				<span class="text-sm">Contacto</span>
+			</SocialPill>
+		</div>
+	</SectionContainer>
+
+	<SectionContainer>
+		<SectionHeader title="EXPERIENCIA" colorTitle="LABORAL" backgroundTitle="EXPERIENCIA" >
+			<PortfolioIcon class="size-7" />
+		</SectionHeader>
+
+		<Experience />
+	</SectionContainer>
+
+	<SectionContainer class="pt-52 pb-52">
+		<SectionHeader title="TECNOLOGIAS Y" colorTitle="HABILIDADES" backgroundTitle="TECNOLOGIAS">
+			<ComputerIcon class="size-7"/>
+		</SectionHeader>
+
+		<Skills />
+	</SectionContainer>
+
+	<SectionContainer class="">
+		<SectionHeader title="PROYECTOS" colorTitle="PERSONALES" backgroundTitle="PROYECTOS">
+			<ShovelIcon class="size-7"/>
+		</SectionHeader>
+
+		<Projects />
+	</SectionContainer>
+
+	<SectionContainer class="pt-52 pb-52">
+		<SectionHeader title="ESTUDIOS" colorTitle="ACADEMICOS" backgroundTitle="ESTUDIOS">
+			<GlassIcon class="size-7"/>
+		</SectionHeader>
+
+		<Studies />
+	</SectionContainer>
+
+	<SectionContainer class="pb-52">
+		<SectionHeader title="SOBRE" colorTitle="Mi" backgroundTitle="QUIEN SOY?" >
+			<UserIcon class="size-7"/>
+		</SectionHeader>
+
+		<About />
+	</SectionContainer>
+
+</main>
+
+<style>
+
+	.typing-effect {
+		font-family: monospace;
+		white-space: nowrap;
+		border-right: 4px solid;
+		width: 6ch;
+
+		animation: typing 1s steps(6), blink .5s infinite step-end alternate;
+		overflow: hidden;
+	}
+
+	@keyframes typing {
+		from { width: 0; }
+	}
+
+	@keyframes blink {
+		50% { border-color: transparent; }
+	}
+
+</style>

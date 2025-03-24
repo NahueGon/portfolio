@@ -1,0 +1,86 @@
+---
+
+import ProjectItem from "./ProjectItem.astro";
+import BootstrapIcon from "./icons/skills/BootstrapIcon.astro";
+import ReactIcon from "./icons/skills/ReactIcon.astro";
+import TailwindIcon from "./icons/skills/TailwindIcon.astro";
+import SymfonyIcon from "./icons/skills/SymfonyIcon.astro";
+
+const tags = {
+    React: { 
+        name: 'React',
+        classes: 'bg-[#003259] text-white',
+        icon: ReactIcon
+    },
+    Tailwind: { 
+        name: 'Tailwind',
+        classes: 'bg-[#003159] text-white',
+        icon: TailwindIcon
+    },
+    Symfony: { 
+        name: 'Symfony',
+        classes: 'bg-[#003159] text-white',
+        icon: SymfonyIcon
+    },
+    Twig: { 
+        name: 'Twig',
+        classes: 'bg-[#003e59] text-white',
+        icon: SymfonyIcon
+    },
+    Bootstrap: { 
+        name: 'Bootstrap',
+        classes: 'bg-[#340059] text-white',
+        icon: BootstrapIcon
+    },
+}
+
+const projects = [
+    {
+        image: '/images/projects-miecommerce.jpg',
+        title: 'MiEcommerce',
+        description: 'Plataforma de comercio electrónico. Permite la gestión de productos y carrito de compras.',
+        link: '#',
+        github: 'https://github.com/NahueGon/MiEcommerce',
+        tags: [tags.React, tags.Tailwind]
+    },
+    {
+        image: '/images/no-image.jpg',
+        title: 'To-do List',
+        description: 'Aplicación para gestionar tareas. Permite agregar, editar y eliminar tareas de forma intuitiva y sencilla.',
+        link: '#',
+        github: '',
+        tags: [tags.React, tags.Bootstrap]
+    },
+    {
+        image: '/images/no-image.jpg',
+        title: 'Calendar',
+        description: 'Calendario interactivo. Facilita la organización de eventos y recordatorios de manera eficiente.',
+        link: '#',
+        github: '',
+        tags: [tags.React, tags.Tailwind]
+    },
+    {
+        image: '/images/no-image.jpg',
+        title: 'AMBProductos',
+        description: 'Sistema de gestión de productos. Permite realizar altas, bajas y modificaciones de productos en una interfaz amigable.',
+        link: 'https://github.com/NahueGon/ABMProductos',
+        github: '',
+        tags: [tags.Bootstrap, tags.Twig]
+    },
+]
+
+---
+<div class="grid grid-cols-1 gap-5">
+    {
+        projects.map( ({ image, title, description, link, github, tags }) => (
+            <ProjectItem  
+                image={ image }
+                title={ title }
+                description={ description }
+                link={ link }
+                github={ github }
+                tags={ tags }
+            />
+        ) )
+    }
+</div>

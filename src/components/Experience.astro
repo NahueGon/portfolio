@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const experiences = [
+    {
+        date: 'Julio 2024 – Diciembre 2024',
+        company: 'Gesprender',
+        rol: 'Programador Backend',
+        description: 'Durante mi tiempo en Gesprender, participé en el desarrollo del proyecto Empremarket, es una plataforma enfocada en brindar soluciones a emprendimientos en Santa Fe. Mi rol estuvo enfocado en la construcción y optimización del backend, asegurando un código limpio, escalable y eficiente.',
+    },
+    {
+        date: 'Septiembre 2024 – Actualidad',
+        company: 'MiEcommerce',
+        rol: 'Programador Fullstack',
+        description: 'Actualmente, me encuentro desarrollando un eCommerce llamado MiEcommerce, intentando aplicar las mejores prácticas en desarrollo web y arquitectura de software.',
+    }
+]
+---
+<ol class="flex flex-col gap-5 relative border-s border-gray-200 dark:border-gray-700 opacity-70">
+    {
+        experiences.map( experience => (
+            <li class="ms-4">
+               <ExperienceItem {...experience} />
+            </li>
+        ) )
+    }       
+</ol>
+

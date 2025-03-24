@@ -1,0 +1,11 @@
+---
+const { name, classes, Icon } = Astro.props;
+---
+
+
+<span 
+    class=`flex gap-2 text-xs rounded-xl border border-white/10 px-2 py-1 items-center ${ classes }`
+>
+    <Icon class="size-4 rounded-2xl" />
+    { name }
+</span>
