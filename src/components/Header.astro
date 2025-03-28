@@ -2,7 +2,7 @@
 import MoonIcon from "./icons/MoonIcon.astro";
 ---
 
-<header class="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-between w-full max-w-2xl sm:mt-2 p-3 sm:p-4 opacity-[95] rounded-b-xl sm:rounded-xl">
+<header class="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-between w-full max-w-2xl sm:mt-2 px-4 sm:py-2 opacity-[95] rounded-b-xl sm:rounded-xl">
     <div class="flex items-center">
         <img class="rounded-full w-12 h-12 mr-4 block sm:hidden" src="/images/perfil.jpg" alt="photo by Nahuel González">
         <a href="/" class="font-sans italic text-xl font-semibold">
@@ -10,25 +10,30 @@ import MoonIcon from "./icons/MoonIcon.astro";
         </a>
     </div>
     <nav class="flex items-center gap-6">
-        <MoonIcon class="cursor-pointer" />
+        <MoonIcon id="theme" class="cursor-pointer" />
     </nav>
 </header>
+
+<script>
+    const themeButton = document.querySelector('#theme');
+
+    themeButton.addEventListener('click', () => {
+        const html = document.documentElement;
+        if (html.classList.contains('dark')) {
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script>
 
 <style>
     header {
         animation: nav-shadow 1s linear both;
         animation-timeline: scroll();
         animation-range: 0 100px;
-    }
-  
-    header {
-        background-image: linear-gradient(to right, rgba(1, 18, 174, 0.1), rgba(215, 104, 1, 0.1));
-    }
-  
-    @media (prefers-color-scheme: dark) {
-        header {
-            background-image: linear-gradient(to right, rgba(29, 43, 174, 0.1), rgba(206, 120, 39, 0.1));
-        }
     }
   
     @keyframes nav-shadow {
