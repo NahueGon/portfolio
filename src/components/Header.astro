@@ -9,42 +9,50 @@ const navItems = [
         url: "/#experiencia",
     },
     {
+        title: "Habilidades",
+        label: "habilidades",
+        url: "/#habilidades",
+    },
+    {
         title: "Proyectos",
         label: "proyectos",
         url: "/#proyectos",
     },
     {
-        title: "Habilidades",
-        label: "habilidades",
-        url: "/#habilidades",
+        title: "Estudios",
+        label: "estudios",
+        url: "/#estudios",
     },
     {
         title: "Sobre mí",
         label: "sobre-mi",
         url: "/#sobre-mi",
     },
-]
-
+];
 ---
 
-<header class="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-between w-full max-w-2xl sm:mt-2 p-2 sm:px-4 opacity-[95] rounded-b-xl sm:rounded-xl">
+<header
+    class="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-between w-full max-w-2xl sm:mt-2 p-2 sm:px-4 opacity-[95] rounded-b-xl sm:rounded-xl"
+>
     <div class="flex items-center">
-        <img class="rounded-full w-12 h-12 mr-4 block sm:hidden" src="/images/perfil.jpg" alt="photo by Nahuel González">
-        <a href="/" class="font-sans italic text-xl font-semibold">
-            NauDev
-        </a>
+        <img
+            class="rounded-full w-12 h-12 mr-4 block sm:hidden"
+            src="/images/perfil.jpg"
+            alt="photo by Nahuel González"
+        />
+        <a href="/" class="font-sans italic text-xl font-semibold"> NauDev </a>
     </div>
-    
-    <nav class="flex items-center gap-6">
+
+    <nav class="flex items-center gap-2">
         {
             navItems.map((link) => (
-              <a
-                class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
-                aria-label={link.label}
-                href={link.url}
-              >
-                {link.title}
-              </a>
+                <a
+                    class="relative block px-1 py-1 transition hover:text-blue-600 dark:hover:text-blue-600"
+                    aria-label={link.label}
+                    href={link.url}
+                >
+                    {link.title}
+                </a>
             ))
         }
         <MoonIcon id="theme" class="cursor-pointer" />
@@ -52,73 +60,86 @@ const navItems = [
 </header>
 
 <script>
-document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const navItems = document.querySelectorAll("header nav a");
+        const themeButton = document.querySelector("#theme");
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500")
+        if ( !themeButton ) {
+            console.error("No se encontró el botón con id 'theme'");
+            return; // Detener la ejecución si el botón no existe
+        }
+
+        const callback = ( entries: any[] ) => {
+            entries.forEach(( entry ) => {
+                if (entry.isIntersecting) {
+                    navItems.forEach(( item ) => {
+                        if ( item.getAttribute("aria-label") == entry.target.id ) {
+                            item.classList.add("text-blue-500");
+                        } else {
+                            item.classList.remove("text-blue-500");
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3,
+        });
+
+        sections.forEach(( section ) => {
+            observer.observe( section );
+        });
+
+        // Cleanup function
+        document.onvisibilitychange = () => {
+            if ( document.visibilityState === "hidden" ) {
+                observer.disconnect();
             } else {
-              item.classList.remove("text-blue-500")
+                sections.forEach((section) => {
+                    observer.observe(section);
+                });
             }
-          })
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    })
-
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect()
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
-      }
-    }
-  })
-
-    const themeButton = document.querySelector('#theme');
-
-    themeButton.addEventListener('click', () => {
-        const html = document.documentElement;
-        if (html.classList.contains('dark')) {
-            html.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        } else {
-            html.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        }
+        };
+    
+        themeButton.addEventListener("click", () => {
+            const html = document.documentElement;
+            if ( html.classList.contains("dark" )) {
+                html.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            } else {
+                html.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+            }
+        });
     });
+
 </script>
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     header {
         animation: nav-shadow 1s linear both;
         animation-timeline: scroll();
         animation-range: 0 100px;
     }
-  
+
     @keyframes nav-shadow {
         0% {
-            background-image: linear-gradient(to right, rgba(38, 23, 203, 0), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(
+                to right,
+                rgba(38, 23, 203, 0),
+                rgba(0, 0, 0, 0)
+            );
             border: 1px solid rgba(0, 0, 0, 0);
         }
-    
+
         to {
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(15px);

@@ -20,7 +20,7 @@ import UserIcon from "./icons/UserIcon.astro";
 ---
 
 <main>
-	<SectionContainer class="pt-52 pb-52">
+	<SectionContainer class="py-52">
 		<div class="flex justify-center sm:justify-between gap-x-5 md:gap-x-10 mb-5 opacity-80">
 			<img class="min-w-35 max-w-60 hidden sm:block rounded-full flex-none" src="/images/perfil.jpg" alt="photo by Nahuel González">
 			<div class="w-90 shrink">
@@ -41,7 +41,7 @@ import UserIcon from "./icons/UserIcon.astro";
 				<LinkedInIcon class="size-4" />
 				<span class="text-sm">LinkedIn</span>
 			</SocialPill>
-			<SocialPill href="" >
+			<SocialPill href="../../public/files/cv/cv-nahuel-gonzalez.pdf" >
 				<FileIcon class="size-5" />
 				Resume
 			</SocialPill>
@@ -52,7 +52,7 @@ import UserIcon from "./icons/UserIcon.astro";
 		</div>
 	</SectionContainer>
 
-	<SectionContainer>
+	<SectionContainer id="experiencia" class="py-30">
 		<SectionHeader title="EXPERIENCIA" colorTitle="LABORAL" backgroundTitle="EXPERIENCIA" >
 			<PortfolioIcon class="size-7" />
 		</SectionHeader>
@@ -60,7 +60,7 @@ import UserIcon from "./icons/UserIcon.astro";
 		<Experience />
 	</SectionContainer>
 
-	<SectionContainer class="pt-52 pb-52">
+	<SectionContainer id="habilidades" class="py-30">
 		<SectionHeader title="TECNOLOGIAS Y" colorTitle="HABILIDADES" backgroundTitle="TECNOLOGIAS">
 			<ComputerIcon class="size-7"/>
 		</SectionHeader>
@@ -68,7 +68,7 @@ import UserIcon from "./icons/UserIcon.astro";
 		<Skills />
 	</SectionContainer>
 
-	<SectionContainer class="">
+	<SectionContainer id="proyectos" class="py-30">
 		<SectionHeader title="PROYECTOS" colorTitle="PERSONALES" backgroundTitle="PROYECTOS">
 			<ShovelIcon class="size-7"/>
 		</SectionHeader>
@@ -76,7 +76,7 @@ import UserIcon from "./icons/UserIcon.astro";
 		<Projects />
 	</SectionContainer>
 
-	<SectionContainer class="pt-52 pb-52">
+	<SectionContainer id="estudios" class="py-30">
 		<SectionHeader title="ESTUDIOS" colorTitle="ACADEMICOS" backgroundTitle="ESTUDIOS">
 			<GlassIcon class="size-7"/>
 		</SectionHeader>
@@ -84,7 +84,7 @@ import UserIcon from "./icons/UserIcon.astro";
 		<Studies />
 	</SectionContainer>
 
-	<SectionContainer class="pb-52">
+	<SectionContainer id="sobre-mi" class="pt-30 pb-52">
 		<SectionHeader title="SOBRE" colorTitle="Mi" backgroundTitle="QUIEN SOY?" >
 			<UserIcon class="size-7"/>
 		</SectionHeader>
