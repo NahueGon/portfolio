@@ -1,6 +1,5 @@
 ---
-import MoonIcon from "./icons/MoonIcon.astro";
-// import ThemeToggle from "./ThemeToggle.astro";
+import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
     {
@@ -55,7 +54,7 @@ const navItems = [
                 </a>
             ))
         }
-        <MoonIcon id="theme" class="cursor-pointer" />
+        <ThemeToggle />
     </nav>
 </header>
 
@@ -63,12 +62,6 @@ const navItems = [
     document.addEventListener("DOMContentLoaded", () => {
         const sections = document.querySelectorAll("section");
         const navItems = document.querySelectorAll("header nav a");
-        const themeButton = document.querySelector("#theme");
-
-        if ( !themeButton ) {
-            console.error("No se encontró el botón con id 'theme'");
-            return; // Detener la ejecución si el botón no existe
-        }
 
         const callback = ( entries: any[] ) => {
             entries.forEach(( entry ) => {
@@ -104,17 +97,6 @@ const navItems = [
                 });
             }
         };
-    
-        themeButton.addEventListener("click", () => {
-            const html = document.documentElement;
-            if ( html.classList.contains("dark" )) {
-                html.classList.remove("dark");
-                localStorage.setItem("theme", "light");
-            } else {
-                html.classList.add("dark");
-                localStorage.setItem("theme", "dark");
-            }
-        });
     });
 
 </script>
