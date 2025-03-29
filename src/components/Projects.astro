@@ -40,7 +40,7 @@ const projects = [
         image: '/images/projects-miecommerce.jpg',
         title: 'MiEcommerce',
         description: 'Plataforma de comercio electrónico. Permite la gestión de productos y carrito de compras.',
-        link: '#',
+        link: '',
         github: 'https://github.com/NahueGon/MiEcommerce',
         tags: [tags.React, tags.Tailwind, tags.Symfony]
     },
@@ -48,7 +48,7 @@ const projects = [
         image: '/images/no-image.jpg',
         title: 'To-do List',
         description: 'Aplicación para gestionar tareas. Permite agregar, editar y eliminar tareas de forma intuitiva y sencilla.',
-        link: '#',
+        link: '',
         github: '',
         tags: [tags.React, tags.Bootstrap]
     },
@@ -56,7 +56,7 @@ const projects = [
         image: '/images/no-image.jpg',
         title: 'Calendar',
         description: 'Calendario interactivo. Facilita la organización de eventos y recordatorios de manera eficiente.',
-        link: '#',
+        link: '',
         github: '',
         tags: [tags.React, tags.Tailwind]
     },
@@ -64,14 +64,14 @@ const projects = [
         image: '/images/AMBProductos.jpg',
         title: 'AMBProductos',
         description: 'Sistema de gestión de productos. Permite realizar altas, bajas y modificaciones de productos en una interfaz amigable.',
-        link: 'https://github.com/NahueGon/ABMProductos',
-        github: '',
+        link: '',
+        github: 'https://github.com/NahueGon/ABMProductos',
         tags: [tags.Symfony, tags.Bootstrap, tags.Twig]
     },
 ]
 
 ---
-<div class="grid grid-cols-1 gap-5">
+<div class="grid grid-cols-1 gap-10">
     {
         projects.map( ({ image, title, description, link, github, tags }) => (
             <ProjectItem  
