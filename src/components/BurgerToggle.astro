@@ -1,0 +1,18 @@
+---
+import BurgerIcon from "./icons/BurgerIcon.astro";
+
+---
+<button class="sm:hidden cursor-pointer" id="toggleBtn">
+    <BurgerIcon class="size-6" />
+</button>
+
+<script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const nav = document.getElementById('nav');
+
+    if (toggleBtn && nav) {
+        toggleBtn.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+        });
+    }
+</script>
