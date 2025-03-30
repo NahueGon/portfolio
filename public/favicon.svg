@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" fill="#000000">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier">
+<path fill="#000000" d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z"/>
+<path d="M2.508 10.639c0-1.2.768-1.872 1.8-1.872c.456 0 1.2.36 1.512.792l7.608 10.153h.048v-9.073c0-1.2.768-1.872 1.8-1.872s1.8.672 1.8 1.872v13.633c0 1.2-.768 1.872-1.8 1.872c-.456 0-1.176-.359-1.512-.792L6.157 15.319h-.048v8.953c0 1.2-.768 1.872-1.8 1.872s-1.8-.672-1.8-1.872V10.639zm29.402 5.232c1.512 0 2.111.768 2.111 2.305c0 4.632-3.024 8.112-7.824 8.112c-4.873 0-8.257-3.864-8.257-8.833c0-4.992 3.36-8.833 8.257-8.833c3.623 0 6.6 1.704 6.6 3.384c0 1.032-.647 1.68-1.488 1.68c-1.631 0-1.967-1.752-5.111-1.752c-3 0-4.513 2.616-4.513 5.52c0 2.929 1.464 5.521 4.513 5.521c1.896 0 4.08-1.056 4.08-3.792H27.83c-.984 0-1.682-.696-1.682-1.681c0-1.008.77-1.632 1.682-1.632h4.08z" fill="#ffffff"/>
+</g>
+</svg>
