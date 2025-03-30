@@ -1,18 +1,36 @@
 ---
 import BurgerIcon from "./icons/BurgerIcon.astro";
-
+import BurgerTransitionIcon from "./icons/BurgerTransitionIcon.astro";
 ---
-<button class="sm:hidden cursor-pointer" id="toggleBtn">
-    <BurgerIcon class="size-6" />
-</button>
+
+<div class="relative ml-1 mr-1">
+    <button 
+        class="sm:hidden cursor-pointer size-10 appearance-none border-none flex transition" 
+        id="toggleBtn"
+    >
+        <BurgerIcon class="size-10 absolute transition-transform duration-300 ease-in-out" id="burger-icon" style="transform: scale(1);" />
+        <BurgerTransitionIcon class="size-10 absolute transition-transform duration-300 ease-in-out" id="burger-transition-icon" style="transform: scale(0);" />
+    </button>
+</div>
 
 <script>
     const toggleBtn = document.getElementById('toggleBtn');
+    const burgerIcon = document.getElementById('burger-icon');
+    const burgerTransitionIcon = document.getElementById('burger-transition-icon');
     const nav = document.getElementById('nav');
 
     if (toggleBtn && nav) {
         toggleBtn.addEventListener('click', () => {
             nav.classList.toggle('hidden');
+
+            // Alternar entre los iconos con el atributo scale
+            if (burgerIcon.style.transform === "scale(1)") {
+                burgerIcon.style.transform = "scale(0)";
+                burgerTransitionIcon.style.transform = "scale(1)";
+            } else {
+                burgerIcon.style.transform = "scale(1)";
+                burgerTransitionIcon.style.transform = "scale(0)";
+            }
         });
     }
 </script>
