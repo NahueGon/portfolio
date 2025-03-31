@@ -5,9 +5,9 @@ const { title, colorTitle, backgroundTitle } = Astro.props;
 ---
 
 <div class="relative flex justify-center items-center gap-2 mb-15 opacity-80">
-    <p class="absolute z-[-1] font-bold sm:font-extrabold text-5xl sm:text-6xl md:text-7xl text-gray-300 dark:text-zinc-800 tracking-wider sm:tracking-widest opacity-100">{ backgroundTitle }</p>
+    <p class="absolute z-[-1] font-bold sm:font-extrabold text-5xl sm:text-6xl md:text-7xl text-zinc-400/30 dark:text-zinc-800 tracking-wider sm:tracking-widest">{ backgroundTitle }</p>
     <h2 class="font-bold text-2xl sm:text-3xl">
-        { title } <span class="dark:text-blue-600">{ colorTitle }</span>
+        { title } <span class="dark:text-sky-500">{ colorTitle }</span>
     </h2>
     <slot />
 </div>

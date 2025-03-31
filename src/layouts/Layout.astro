@@ -10,8 +10,8 @@
 	<body class="relative text-black dark:text-white">
 		<div
 			class="fixed top-0 bottom-0 z-[-2] h-full w-full bg-gray-100 dark:bg-gray-950
-			bg-[radial-gradient(ellipse_90%_80%_at_0%_10%,rgba(1,18,174,0.182),rgba(255,255,255,0))] 
-			dark:bg-[radial-gradient(ellipse_90%_80%_at_0%_10%,rgba(1,18,174,0.2),rgba(255,255,255,0)),radial-gradient(ellipse_100%_80%_at_100%_100%,rgba(215,104,1,0.2),rgba(255,255,255,0))]">
+			bg-[radial-gradient(ellipse_100%_100%_at_0%_10%,rgba(100,110,220,0.2),rgba(255,255,255,0)),radial-gradient(ellipse_90%_100%_at_90%_100%,rgba(215,104,1,0.1),rgba(255,255,255,0))] 
+			dark:bg-[radial-gradient(ellipse_100%_100%_at_0%_10%,rgba(100,110,90,0.1),rgba(0,0,0,0.2)),radial-gradient(ellipse_90%_100%_at_90%_100%,rgba(215,104,1,0.1),rgba(255,255,255,0))]">
 		</div>
 		<slot />
 	</body>
@@ -29,7 +29,6 @@
 	}
 
 	body {
-		/* color: rgba(17, 17, 17, 0.9); */
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -42,23 +41,17 @@
         }
 	}
 
-	/* @media (prefers-color-scheme: dark) {
-		body {
-			color: rgba(255, 255, 255, 0.9);
-		}
-	} */
-
 	@keyframes fadeIn {
 		0% {
-			opacity: 0;  /* Al principio, el elemento es completamente invisible */
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;  /* Al final, el elemento es completamente visible */
+			opacity: 1; 
 		}
 	}
 
 	.fade-in {
-		animation: fadeIn 1s ease-out;  /* Aplica la animación fadeIn durante 2 segundos */
+		animation: fadeIn 1s ease-out;
 	}
 
 </style>
