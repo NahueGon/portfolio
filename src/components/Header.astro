@@ -68,20 +68,20 @@ dark:bg-gradient-to-b dark:from-black/30 dark:to-black/30  backdrop-blur-lg">
     document.addEventListener("DOMContentLoaded", () => {
         const sections = document.querySelectorAll("section");
         const navItems = document.querySelectorAll("header nav a");
-
+        let activeNavItem = null;
+        
         const callback = ( entries: any[] ) => {
             entries.forEach(( entry ) => {
                 if (entry.isIntersecting) {
-                    navItems.forEach(( item ) => {
-                        if ( item.getAttribute("aria-label") == entry.target.id ) {
-                            item.classList.add("dark:text-sky-500/90");
-                            item.classList.add("text-blue-600");
-                        } else {
-                            item.classList.remove("dark:text-sky-500/90");
-                            item.classList.remove("text-blue-600");
-                        }
-                    });
+                const targetId = entry.target.id;
+                const newActiveItem = [...navItems].find(item => item.getAttribute("aria-label") === targetId);
+
+                if (newActiveItem && newActiveItem !== activeNavItem) {
+                    activeNavItem?.classList.remove("dark:text-sky-500/90", "text-blue-600");
+                    newActiveItem.classList.add("dark:text-sky-500/90", "text-blue-600");
+                    activeNavItem = newActiveItem;
                 }
+            }
             });
         };
 
